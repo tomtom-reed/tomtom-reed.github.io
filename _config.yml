@@ -22,18 +22,20 @@ title: My name is Tom
 email: tomtom.reed@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Lorem Ipsum and all that. I am job hunting for .NET and OpenAI stuff.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: AreYouSeriousWhyWouldIHaveOne
 github_username:  tomtom-reed
 
 # Build settings
-theme: pages-themes/minimal@v0.2.0
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-remote-theme
 domain: tomtom-reed.github.io
 url: https://tomtom-reed.github.io
-baseurl: /tomtom-reed.github.io/docs
+baseurl: /tomtom-reed.github.io/_site
+destination: ./docs
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

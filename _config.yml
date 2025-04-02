@@ -18,16 +18,17 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Thomas "Tom" Reed
+title: Thomas Reed
 email: tomtom.reed@gmail.com
 description: #>- # this means to ignore newlines until "baseurl:"
-  Experienced .NET backend developer turned AI Evangelist.
+  Experienced .NET backend developer turned <a href="/blog/">AI Evangelist</a>
   <br><br>
   GPTs are a powerful tool that can backfire if used improperly.
   <br><br>
-  Training is important, but also a proper backend stack with Schema As Code, Testing, and Security-First principles is necessary to be fully effective.
+  Training is important, but a backend stack with proper Automation, Testing, and Security-First principles is necessary to be fully effective.
   <br><br>
   That's my specialty. 
+  <br><br><br><br><br>
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: HAHAHAHAHAHA

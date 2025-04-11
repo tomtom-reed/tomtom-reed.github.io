@@ -15,6 +15,9 @@ With a Master's degree in Computer Science and Engineering from Santa Clara Univ
 ### [MyRealworldApi](/MyRealworldAPI/)
 A simple implementation of the famous Realworld-API backend specification intended to demonstrate my primary technical competencies. 
 
+### [AiPlayground](/aiplayground/)
+A skeleton implementation of the OpenAI Assistants API in C# designed to be easily modifiable to enterprise needs.
+
 ### [This Site](/thiswebsite/)
 A Jekyll-based static site implementation. The focus here is more on the documentation and configuration process than on any code. Tools are also part of development.
 

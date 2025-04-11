@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AiPlayground | Thomas Reed</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="AiPlayground" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Experienced .NET backend developer turned AI Evangelist GPTs are a powerful tool that can backfire if used improperly. Training is important, but a backend stack with proper Automation, Testing, and Security-First principles is necessary to be fully effective. That’s my specialty." />
+<meta property="og:description" content="Experienced .NET backend developer turned AI Evangelist GPTs are a powerful tool that can backfire if used improperly. Training is important, but a backend stack with proper Automation, Testing, and Security-First principles is necessary to be fully effective. That’s my specialty." />
+<link rel="canonical" href="http://localhost:4000/aiplayground/" />
+<meta property="og:url" content="http://localhost:4000/aiplayground/" />
+<meta property="og:site_name" content="Thomas Reed" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AiPlayground" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Experienced .NET backend developer turned AI Evangelist GPTs are a powerful tool that can backfire if used improperly. Training is important, but a backend stack with proper Automation, Testing, and Security-First principles is necessary to be fully effective. That’s my specialty.","headline":"AiPlayground","url":"http://localhost:4000/aiplayground/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=4cba57f8032915816cd44ee71e1877345d521bbb">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">Thomas Reed</a></h1>
+
+        
+
+        <p>Experienced .NET backend developer turned <a href="/blog/">AI Evangelist</a> <br><br> GPTs are a powerful tool that can backfire if used improperly. <br><br> Training is important, but a backend stack with proper Automation, Testing, and Security-First principles is necessary to be fully effective. <br><br> That's my specialty. <br><br><br><br><br></p>
+
+        
+        <p class="view"><a href="https://github.com/tomtom-reed/tomtom-reed.github.io">View the Project on GitHub <small>tomtom-reed/tomtom-reed.github.io</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="aiplayground"><a href="https://github.com/tomtom-reed/AiPlayground">AiPlayground</a></h1>
+<p>A skeleton implementation of the OpenAI Assistants API in C# designed to be easily modifiable to enterprise needs.</p>
+
+<p>To explain the rationale behind this project, this library is NOT necessary for creating assistants in the first place, as the UI is almost inarguably easier to use. The issue with <a href="https://platform.openai.com/docs/overview">platform.openai.com</a> is that it opens the possibility of changing things in production without a proper audit trail and notification system, which should terrify you.</p>
+
+<p>What this library does is enable in-channel auditing, logging, and persistance. <strong>None of that is included in this codebase</strong> but it is a skeleton to build on top of. There is no license on this code so feel free to copy-paste it at your own peril. I have included documentation where appropriate: more to follow.</p>
+
+<p>The necessary components of responsibly using AI in production (in my opinion) is to:</p>
+
+<h3 id="save-details-of-created-assistants">Save details of created assistants</h3>
+<p>You MUST know at minimum when and by whom the assistant was created and modified. Ideally the system should have an email watchlist which should be notified when any assistant is modified. As of time of writing, platform.openai.com does NOT have either of those IMO mandatory features, so they can only be added by implementing the Assistants API in code as this project does.</p>
+
+<h3 id="save-details-of-completions">Save details of completions</h3>
+<p>Persistant output (output that would be used multiple times) may become outdated due to changes in business requirements <em>even if the data used in the prompt did not change</em>. One example could be new legal regulations that require the output to use certain language or disclaimers. This means that your persistant storage of these completions should store metadata about its creation that can be used to filter the completions for later deprecation or regeneration. Minimally this should include assistant name and assistant version (or last modified date) alongside whatever identifies the prompt used.</p>
+
+<h3 id="save-details-of-prompts">Save details of prompts</h3>
+<p>For reasons previously mentioned, prompts should also be versioned. The details of how to do this are left to your particular implementation, as prompts can be complicated. If you look at the code you may notice that it is possible to provide very complex data to the initialMessage, including multi-channel files, and that threads can be used multiple times to create a conversation with context about previous messages. A reader who has gotten this far should probably be able to know what and why is needed to create a proper audit trail for their implementation.</p>
+
+<h1 id="development-process">Development Process</h1>
+<p>Visual Studio Code running in WSL Ubuntu.</p>
+
+<p>At time of writing, the code is functional but incomplete. Use the unit tests as an entry point. You will need an API key from platform.openai.com placed in the <strong>OPENAI_API_KEY</strong> env variable.</p>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/tomtom-reed">tomtom-reed</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>
